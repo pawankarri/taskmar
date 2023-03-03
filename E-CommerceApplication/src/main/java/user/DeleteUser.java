@@ -13,6 +13,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/DeleteUser")
 public class DeleteUser extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
 @Override
 protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	// TODO Auto-generated method stub
@@ -23,11 +26,12 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 	 {
 		 Class.forName("com.mysql.jdbc.Driver");
 		 String url="jdbc:mysql://localhost:3306?user=root&password=12345";
-		 String query="delete * from pawan.commerence where E-MAIL=?";
+		 String query="delete * from pawan.commerence where EMAIL=?";
 		 Connection con=DriverManager.getConnection(url);
 		 PreparedStatement ps=con.prepareStatement(query);
           ps.setString(1,email);
           ps.executeUpdate();
+          out.close();
 	 }
 	 catch(Exception e)
 	 {

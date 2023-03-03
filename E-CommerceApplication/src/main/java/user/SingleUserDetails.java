@@ -14,6 +14,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/SingleUserDetails")
 public class SingleUserDetails extends HttpServlet{
+
+	private static final long serialVersionUID = 1L;
+
 @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	 PrintWriter out = resp.getWriter();
@@ -24,7 +27,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 	             + "<td><b>LASTNAME</b></td>" + "<td><b>MOBILENUMBER</b></td>"
 	             + "<td><b>GENDER</b></td>" + "<td><b>PASSWORD</b></td></tr>");
 	     String url="jdbc:mysql://localhost:3306?user=root&password=12345";
-			String query="select * from pawan.commerence where E-MAIL=? and PASSWORD=? ";
+			String query="select * from pawan.commerence where EMAIL=? and PASSWORD=? ";
 			 String email=req.getParameter("email");
 				String passwd=req.getParameter("passwd");
 			try {
@@ -32,6 +35,8 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 				Connection con=DriverManager.getConnection(url);
 				PreparedStatement ps=con.prepareStatement(query);
 				ResultSet rs=ps.executeQuery();
+				ps.setString(1,email);
+				ps.setString(2,passwd);
 				while(rs.next())
 				{
 					String emaill=rs.getString(1);
@@ -50,7 +55,7 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws S
 		            out.close();
 				
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 }
 }
