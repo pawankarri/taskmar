@@ -2,25 +2,39 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Regesiter form</title>
 </head>
-<body>
+<body bgcolor="lightgreen" text="red">
 <form action="RegisterUser">
-<div class="container">
+<div class="container" align="center">
 <h3>REGISTRATION FORM</h3>
-<label for="email"><b>EMAIL</b></label>
-<input type="text" placeholder="enter the mail" name="email" id="email" required><br>
-<label for="fname"><b>FIRSTNAME</b></label>
-<input type="text" placeholder="enter the firstname" name="fname" id="fname" required><br>
-<label for="lname"><b>LASTNAME</b></label>
-<input type="text" placeholder="enter the lastname" name="lname" id="lname" required><br>
-<label for="mob"><b>MOBILENUMBER</b></label>
-<input type="number" placeholder="enter the mobilenumber" name="mob" id="mob" required><br>
-<input type="radio" name="gender" value="male">MALE
-<input type="radio" name="gender" value="female">FEMALE<br>
-<label for="psw"><b>PASSWORD</b></label>
-<input type="password" placeholder="enter the password" name="psw" id="psw" required><br>
+<table>
+<tr>
+<td><label for="email"><b>EMAIL</b></label></td>
+<td><input type="text" placeholder="enter the mail" name="email" id="email" required><br></td>
+</tr>
+<tr>
+<td><label for="fname"><b>FIRSTNAME</b></label></td>
+<td><input type="text" placeholder="enter the firstname" name="fname" id="fname" required><br></td>
+</tr>
+<tr>
+<td><label for="lname"><b>LASTNAME</b></label></td>
+<td><input type="text" placeholder="enter the lastname" name="lname" id="lname" required><br></td>
+</tr>
+<tr>
+<td><label for="mob"><b>MOBILENUMBER</b></label></td>
+<td><input type="number" placeholder="enter the mobilenumber" name="mob" id="mob" required><br></td>
+</tr>
+<tr>
+<td><input type="radio" name="gender" value="male">MALE
+<input type="radio" name="gender" value="female">FEMALE<br></td>
+</tr>
+<tr>
+<td><label for="psw"><b>PASSWORD</b></label></td>
+<td><input type="password" placeholder="enter the password" name="psw" id="psw" required><br></td>
+</tr>
 <button type="submit" class="registerbtn">REGISTER</button>
+</table>
 </div>
 </form>
 </body>
